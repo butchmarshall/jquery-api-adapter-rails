@@ -1,0 +1,2 @@
+module JqueryApiAdapterRails
+end
