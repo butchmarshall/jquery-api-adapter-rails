@@ -18,7 +18,7 @@
 		return Api.domain;
 	};
 	Api.extraParams = {};
-	Api.domain = null;
+	Api.domain = <%= ActionController::Base.asset_host.to_json %>.replace(/.*?:\/\//g, "").replace(/^\/\//,"");
 
 	// Private variables
 	var routes = {},
