@@ -26,18 +26,11 @@
 	defaultDataType = "json";
 
 	function get_request(args) {
-		var defer = jQuery.Deferred();
-
-		jQuery.Request(args).then(
+		return jQuery.Request(args).then(
 			function(result) {
-				defer.resolve(result.response);
-			},
-			function(result) {
-				defer.reject(result);
+				return ((result.response)? result.response : result);
 			}
 		);
-
-		return defer;
 	}
 
 	function build_url(base, data) {
